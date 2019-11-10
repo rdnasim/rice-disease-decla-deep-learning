@@ -15,5 +15,9 @@ def src_path():
 def output_path():
     return os.path.join(root_path(),"output")
 
+
 def weight_path():
     return os.path.join(root_path(),"weight")
+
+def test_path():
+    return os.path.join(root_path(),"test")

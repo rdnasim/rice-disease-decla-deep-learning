@@ -20,7 +20,7 @@ from .. import config
 # constant and path varaibles
 batch_size = 32
 num_classes = 11
-epochs = 5
+epochs = 25
 
 # input image dimensions
 
@@ -108,7 +108,7 @@ print("train_label_shape:", y_train.shape)
 print("\ntest_data shape:", X_test.shape)
 print("test_label_shape:", y_test.shape)
 
-"""
+
 model = Sequential()
 model.add(Conv2D(32, kernel_size = (3, 3),
                  activation = 'relu',
@@ -122,7 +122,7 @@ model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Dropout(0.25))
 model.add(Flatten())
-model.add(Dense(100, activation='relu'))
+model.add(Dense(50, activation='relu'))
 
 model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
@@ -147,9 +147,9 @@ score = model.evaluate(X_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
-model.save(os.path.join(config.output_path(), "my_model.h5"))
-"""
+model.save(os.path.join(config.output_path(), "model_1.h5"))
 
+"""
 print("Start Predicting.....")
 print("actulal label: ", y_test[300])
 index = np.argmax(y_test[300])
@@ -159,7 +159,8 @@ test_image = np.ndarray((1, IMG_SIZE, IMG_SIZE, IMG_CHANNEL), dtype = np.float32
 test_image[0] = X_test[300]
 predictions = model.predict(test_image, 1, verbose = 2)
 
-#formatting result; clipping for avoiding logloss(1, 0) danger
+#formatting result; 
 result = predictions[0]
 predict_index = np.argmax(result)
 print("Prediction: ", diseases_label[predict_index])
+"""
