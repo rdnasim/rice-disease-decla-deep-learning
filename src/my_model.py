@@ -20,7 +20,7 @@ from .. import config
 # constant and path varaibles
 batch_size = 32
 num_classes = 11
-epochs = 25
+epochs = 100
 
 # input image dimensions
 
@@ -84,8 +84,8 @@ np.save(os.path.join(config.output_path(), "X_train"), X_train)
 np.save(os.path.join(config.output_path(), "X_test"), X_test)
 np.save(os.path.join(config.output_path(), "y_train"), y_train)
 np.save(os.path.join(config.output_path(), "y_test"), y_test)
-
 """
+
 # loading from saved npz file
 X_train  = np.load(os.path.join(config.output_path(), "X_train.npy")) 
 X_test  = np.load(os.path.join(config.output_path(), "X_test.npy"))
@@ -149,7 +149,7 @@ print('Test accuracy:', score[1])
 
 model.save(os.path.join(config.output_path(), "model_1.h5"))
 
-"""
+
 print("Start Predicting.....")
 print("actulal label: ", y_test[300])
 index = np.argmax(y_test[300])
@@ -163,4 +163,4 @@ predictions = model.predict(test_image, 1, verbose = 2)
 result = predictions[0]
 predict_index = np.argmax(result)
 print("Prediction: ", diseases_label[predict_index])
-"""
+

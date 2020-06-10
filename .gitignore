@@ -1,0 +1,7 @@
+dataset/
+disease/
+output/
+__pycache__
+test/
+weight/
+.vscode

@@ -9,7 +9,7 @@ from keras.models import load_model
 diseases_label = os.listdir(config.dataset_path())
 
 # get image name
-img_name = str(sys.argv[1])
+img_name = str(sys.argv[0])
 
 # get image dir
 img_file = os.path.join(config.test_path(), img_name)
