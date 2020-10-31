@@ -1,7 +1,3 @@
-'''Trains a simple convnet on the my char dataset.
-Gets to 99.25% test accuracy after 12 epochs
-'''
-
 from __future__ import print_function
 import numpy as np
 import os
@@ -19,7 +15,7 @@ from .. import config
 
 # constant and path varaibles
 batch_size = 32
-num_classes = 11
+num_classes = 8
 epochs = 100
 
 # input image dimensions
