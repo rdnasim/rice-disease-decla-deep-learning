@@ -53,8 +53,7 @@ def process_train_data():
             img_px = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
             dis_data[img_no] = img_px
             label.append(folder_no)
-        
-        #print(label)
+
        
        # 85% train data & 15% test data
         split = int(len(dis_data) * 0.85)
